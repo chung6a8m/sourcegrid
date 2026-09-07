@@ -1,0 +1,41 @@
+# Migrating to SourceGrid 5.0
+
+SourceGrid 5.0 continues to target .NET Framework 4.8 and .NET 8 for Windows. It raises the assembly and package major version because the release removes obsolete formatter serialization APIs and changes the SQL client types exposed by `DevAge.Data.SqlClient.SqlCommandBuilder`.
+
+## SQL client namespace
+
+Add a reference to `Microsoft.Data.SqlClient` 7.0.2 and replace uses of `System.Data.SqlClient` types returned by `SqlCommandBuilder`:
+
+```csharp
+using Microsoft.Data.SqlClient;
+
+DevAge.Data.SqlClient.SqlCommandBuilder builder = new DevAge.Data.SqlClient.SqlCommandBuilder(table);
+SqlCommand command = builder.GetInsertCommand();
+```
+
+The following members now expose `Microsoft.Data.SqlClient` types:
+
+- `GetInsertCommand()`, `GetUpdateCommand()`, and `GetDeleteCommand()` return `Microsoft.Data.SqlClient.SqlCommand`.
+- Protected command-building helpers accept `Microsoft.Data.SqlClient.SqlParameterCollection`.
+
+These helpers only construct commands. Applications that later open a `Microsoft.Data.SqlClient.SqlConnection` should review the provider's connection encryption defaults during migration.
+
+## Exception serialization
+
+SourceGrid exception hierarchies no longer carry `[Serializable]` and no longer expose constructors accepting `SerializationInfo` and `StreamingContext`. Formatter-based exception serialization is not supported in SourceGrid 5.0. Message and inner-exception constructors remain available.
+
+Affected base types include:
+
+- `DevAge.DevAgeApplicationException`
+- `SourceGrid.SourceGridException`
+- `SourceGrid.EditingCellException`
+
+Derived SourceGrid and DevAge exception types follow the same policy.
+
+## Cryptography compatibility
+
+The legacy DES and SHA-1 helper signatures and output formats are unchanged. Their implementations now use the base algorithm factories and correctly dispose providers and transforms. DES encryption and decryption now leave caller-owned streams open while completing the operation.
+
+## Platform requirement
+
+The .NET 8 assembly is explicitly marked as supporting Windows 7.0 or later. This restores the platform metadata previously omitted when SDK assembly-info generation was disabled.

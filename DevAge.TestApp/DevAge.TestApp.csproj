@@ -28,14 +28,12 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <RootNamespace>TestApp</RootNamespace>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
@@ -45,7 +43,6 @@
     <DebugSymbols>true</DebugSymbols>
     <RootNamespace>TestApp</RootNamespace>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
@@ -84,7 +81,22 @@
     <ProjectReference Include="..\SourceGrid\SourceGrid.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Samples\Resources\Sample30Menu0.png">
+      <LogicalName>DevAge.TestApp.Samples.Resources.Sample30Menu0.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Resources\Sample30Menu1.png">
+      <LogicalName>DevAge.TestApp.Samples.Resources.Sample30Menu1.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Resources\Sample30Menu2.png">
+      <LogicalName>DevAge.TestApp.Samples.Resources.Sample30Menu2.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Resources\Sample30Menu3.png">
+      <LogicalName>DevAge.TestApp.Samples.Resources.Sample30Menu3.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="System.Data.DataSetExtensions" />
+    <PackageReference Include="System.Resources.Extensions" Condition="'$(TargetFramework)' == 'net48'" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Properties\TestAppResources.Designer.cs" />

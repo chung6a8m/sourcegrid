@@ -10,7 +10,7 @@ namespace SourceGrid.Tests
 	[TestFixture]
 	public class TestGird_ColumnSpan
 	{
-		[Test, ExpectedExceptionAttribute(typeof(OverlappingCellException))]
+		[Test]
 		public void ModifyColumnSpan_ToCauseOverlapping()
 		{
 			SourceGrid.Grid grid1 = new Grid();
@@ -21,10 +21,11 @@ namespace SourceGrid.Tests
 			grid1[0, 5] = new SourceGrid.Cells.Cell("cell to overlap", typeof(string));
 			
 			// this should throw exception
-			grid1[0, 4].ColumnSpan = 2;
+			NUnit.Framework.Assert.Throws<OverlappingCellException>(
+				(System.Action)(() => grid1[0, 4].ColumnSpan = 2));
 		}
 		
-		[Test, ExpectedExceptionAttribute(typeof(OverlappingCellException))]
+		[Test]
 		public void ModifyRowSpan_ToCauseOverlapping()
 		{
 			SourceGrid.Grid grid1 = new Grid();
@@ -35,10 +36,11 @@ namespace SourceGrid.Tests
 			grid1[5, 0] = new SourceGrid.Cells.Cell("cell to overlap", typeof(string));
 			
 			// this should throw exception
-			grid1[4, 0].RowSpan = 2;
+			NUnit.Framework.Assert.Throws<OverlappingCellException>(
+				(System.Action)(() => grid1[4, 0].RowSpan = 2));
 		}
 		
-		[Test, ExpectedExceptionAttribute(typeof(OverlappingCellException))]
+		[Test]
 		public void InsertOverlappingCell()
 		{
 			SourceGrid.Grid grid1 = new Grid();
@@ -48,7 +50,9 @@ namespace SourceGrid.Tests
 			grid1[0, 0] = new SourceGrid.Cells.Cell("Text Span", typeof(string));;
 			grid1[0, 0].ColumnSpan = 2;
 			
-			grid1[0, 1] = new SourceGrid.Cells.Cell("This should throw OverlappingCellException");
+			NUnit.Framework.Assert.Throws<OverlappingCellException>(
+				(System.Action)(() =>
+					grid1[0, 1] = new SourceGrid.Cells.Cell("This should throw OverlappingCellException")));
 		}
 		
 		[Test]

@@ -567,15 +567,10 @@ namespace SourceGrid
 	#endregion
 
 
-	[Serializable]
 	public class EndEditingException : SourceGridException
 	{
 		public EndEditingException(Exception innerException):
 			base(innerException.Message, innerException)
-		{
-		}
-		protected EndEditingException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext):
-			base(p_Info, p_StreamingContext)
 		{
 		}
 	}

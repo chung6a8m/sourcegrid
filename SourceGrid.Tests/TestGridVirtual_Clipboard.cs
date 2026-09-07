@@ -7,6 +7,7 @@ using SourceGrid.Cells;
 namespace SourceGrid.Tests
 {
 	[TestFixture]
+	[Apartment(System.Threading.ApartmentState.STA)]
 	public class TestGridVirtual_Clipboard
 	{
 		private Grid m_grid = null;

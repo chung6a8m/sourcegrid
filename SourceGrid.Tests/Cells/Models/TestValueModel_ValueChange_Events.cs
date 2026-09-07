@@ -58,7 +58,7 @@ namespace SourceGrid.Tests.Cells.Models
 			context.Cell.Editor.SetCellValue(context, 1);
 		}
 		
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void Init()
 		{
 		}

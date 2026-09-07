@@ -5,7 +5,6 @@ namespace DevAge
     /// <summary>
     /// Generic DevAge Exception
     /// </summary>
-	[Serializable]
 	public class DevAgeApplicationException : ApplicationException
 	{
         /// <summary>
@@ -25,22 +24,11 @@ namespace DevAge
 			base(p_strErrDescription, p_InnerException)
 		{
 		}
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="p_Info"></param>
-        /// <param name="p_StreamingContext"></param>
-        protected DevAgeApplicationException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
 	}
 
     /// <summary>
     /// The type specified it is not supported in the current contest
     /// </summary>
-	[Serializable]
 	public class TypeNotSupportedException : DevAgeApplicationException
 	{
         /// <summary>
@@ -66,7 +54,6 @@ namespace DevAge
     /// <summary>
     /// Command line not valid exception
     /// </summary>
-	[Serializable]
 	public class UnrecognizedCommandLineParametersException : DevAgeApplicationException
 	{
         /// <summary>
@@ -92,7 +79,6 @@ namespace DevAge
     /// <summary>
     /// Conversion exception
     /// </summary>
-	[Serializable]
 	public class ConversionErrorException : DevAgeApplicationException
 	{
         /// <summary>

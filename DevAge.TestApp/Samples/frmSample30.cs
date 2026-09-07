@@ -557,8 +557,11 @@ namespace DevAge.TestApp
 			// 
 			// imageListMenu
 			// 
-			this.imageListMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMenu.ImageStream")));
 			this.imageListMenu.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageListMenu.Images.Add(LoadSampleMenuImage(0));
+			this.imageListMenu.Images.Add(LoadSampleMenuImage(1));
+			this.imageListMenu.Images.Add(LoadSampleMenuImage(2));
+			this.imageListMenu.Images.Add(LoadSampleMenuImage(3));
 			this.imageListMenu.Images.SetKeyName(0, "");
 			this.imageListMenu.Images.SetKeyName(1, "");
 			this.imageListMenu.Images.SetKeyName(2, "");
@@ -1317,6 +1320,19 @@ namespace DevAge.TestApp
 		private void cmbCustomDisplay_SelectedValueChanged(object sender, EventArgs e)
 		{
 			lblCmbValue.Text = cmbCustomDisplay.Value.ToString();
+		}
+
+		private static System.Drawing.Image LoadSampleMenuImage(int index)
+		{
+			string resourceName = "DevAge.TestApp.Samples.Resources.Sample30Menu" + index + ".png";
+			using (System.IO.Stream stream = typeof(frmSample30).Assembly.GetManifestResourceStream(resourceName))
+			{
+				if (stream == null)
+					throw new InvalidOperationException("Embedded menu image not found: " + resourceName);
+
+				using (System.Drawing.Image image = System.Drawing.Image.FromStream(stream))
+					return new System.Drawing.Bitmap(image);
+			}
 		}
 	}
 }

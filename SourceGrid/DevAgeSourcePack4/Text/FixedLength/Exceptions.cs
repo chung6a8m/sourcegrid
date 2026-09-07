@@ -2,7 +2,6 @@ using System;
 
 namespace DevAge.Text.FixedLength
 {
-	[Serializable]
 	public class InvalidFieldLengthException : DevAgeApplicationException
 	{
 		public InvalidFieldLengthException(int length):
@@ -10,15 +9,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected InvalidFieldLengthException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class ValueNotValidLengthException : DevAgeApplicationException
 	{
 		public ValueNotValidLengthException(string value, int expectedLength):
@@ -26,15 +18,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected ValueNotValidLengthException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class ValueNotSupportedException : DevAgeApplicationException
 	{
 		public ValueNotSupportedException(string value, Type type):
@@ -42,15 +27,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected ValueNotSupportedException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class TypeNotSupportedException : DevAgeApplicationException
 	{
 		public TypeNotSupportedException(Type type):
@@ -58,15 +36,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected TypeNotSupportedException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class RegExException : DevAgeApplicationException
 	{
 		public RegExException(string group):
@@ -74,15 +45,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected RegExException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class FieldParseException : DevAgeApplicationException
 	{
 		public FieldParseException(string name, string valToParse, Exception innerException):
@@ -90,15 +54,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected FieldParseException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class FieldStringConvertException : DevAgeApplicationException
 	{
 		public FieldStringConvertException(string name, object value, Exception innerException):
@@ -106,12 +63,6 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected FieldStringConvertException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 		/// <summary>
 		/// Returns a string used for error description for a specified object. Usually used when printing the object for the error message when there is a conversion error.
 		/// </summary>
@@ -133,7 +84,6 @@ namespace DevAge.Text.FixedLength
 	}
 
 
-	[Serializable]
 	public class FieldNotDefinedException : DevAgeApplicationException
 	{
 		public FieldNotDefinedException(int fieldIndex):
@@ -141,15 +91,8 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected FieldNotDefinedException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 
-	[Serializable]
 	public class FailedPropertySetFieldException : DevAgeApplicationException
 	{
 		public FailedPropertySetFieldException(string field, Exception innerException):
@@ -157,14 +100,7 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected FailedPropertySetFieldException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
-	[Serializable]
 	public class FailedPropertyGetFieldException : DevAgeApplicationException
 	{
 		public FailedPropertyGetFieldException(string field, Exception innerException):
@@ -172,11 +108,5 @@ namespace DevAge.Text.FixedLength
 		{
 		}
 
-#if !MINI
-		protected FailedPropertyGetFieldException(System.Runtime.Serialization.SerializationInfo p_Info, System.Runtime.Serialization.StreamingContext p_StreamingContext): 
-			base(p_Info, p_StreamingContext)
-		{
-		}
-#endif
 	}
 }

@@ -219,7 +219,6 @@ namespace DevAge.Data
     /// <summary>
     /// Binary data not valid exception
     /// </summary>
-	[Serializable]
 	public class BinaryDataSetInvalidException : DevAgeApplicationException
 	{
         /// <summary>
@@ -243,7 +242,6 @@ namespace DevAge.Data
     /// <summary>
     /// Version not valid exception
     /// </summary>
-	[Serializable]
 	public class BinaryDataSetVersionException : DevAgeApplicationException
 	{
         /// <summary>

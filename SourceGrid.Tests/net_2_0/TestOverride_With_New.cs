@@ -22,7 +22,7 @@ namespace SourceGrid.Tests.net_2_0
 	public class TestOverride_With_New
 	{
 		
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void Init()
 		{
 		}
