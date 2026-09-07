@@ -1,5 +1,8 @@
 <Project>
   <PropertyGroup>
+    <Platforms>AnyCPU</Platforms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <!-- Keep the hand-authored legacy metadata while allowing the SDK to emit
          the target-platform attribute required by the platform analyzer. -->
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
