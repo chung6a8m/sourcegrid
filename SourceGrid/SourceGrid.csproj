@@ -1,0 +1,154 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <NoStdLib>False</NoStdLib>
+    <DocumentationFile>bin\Debug\SourceGrid.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="DevAge.Windows.Forms\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\ButtonMultiSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeMaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DevAgeTextBoxButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\EditableControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\HeaderGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\ImageNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\Line.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\LinkLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\TextBoxUITypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SourceGrid.Extensions\ArrayGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid.Extensions\DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid.Extensions\ListEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SourceGrid.Extensions\PingGrids\PingGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid.Extensions\PlanningGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Common\CustomScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Exporter\GridPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Grids\Grid.Accessibility.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Grids\Grid.Columns.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Grids\Grid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SourceGrid\Grids\GridVirtual.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="SourceGrid.Extensions\Res\Add.ico" />
+    <EmbeddedResource Include="SourceGrid.Extensions\Res\ArrowDown.ICO" />
+    <EmbeddedResource Include="SourceGrid.Extensions\Res\ArrowUp.ICO" />
+    <EmbeddedResource Include="SourceGrid.Extensions\Res\Delete.ICO" />
+    <EmbeddedResource Include="SourceGrid.Extensions\Res\Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="SourceGrid\Cells\Controllers\FullColumnSelection.cs" />
+    <Compile Remove="SourceGrid\Cells\Controllers\FullRowSelection.cs" />
+    <Compile Remove="SourceGrid\Cells\Editors\ControlsRepository.cs" />
+    <Compile Remove="SourceGrid\Cells\Editors\IEditor.cs" />
+    <Compile Remove="SourceGrid\Controllers\Grid.cs" />
+    <Compile Remove="SourceGrid\Controllers\GridBase.cs" />
+    <Compile Remove="SourceGrid\Controllers\MouseSelection.cs" />
+    <Compile Remove="SourceGrid\Controllers\SelectionClipboard.cs" />
+    <Compile Remove="SourceGrid\Controllers\SelectionDelete.cs" />
+    <Compile Remove="SourceGrid\Controllers\SelectionDrag.cs" />
+    <Compile Remove="SourceGrid\Controllers\SelectionDrop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" />
+    <PackageReference Include="System.Text.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="DevAge.Windows.Forms\Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
