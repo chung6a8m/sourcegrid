@@ -81,6 +81,7 @@ secrets/
 # ------------------------------
 node_modules/
 dist/
+.worktrees/
 
 # ------------------------------
 # OS files
